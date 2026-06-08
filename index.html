@@ -1,1 +1,1276 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Elbgenuss Catering | Business-Referenz</title>
+  <meta name="description" content="Elbgenuss Catering – moderne Business-Referenzseite für Catering, Events und private Feiern." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #fff8ef;
+      --cream-2: #f7ead9;
+      --green: #16433c;
+      --green-2: #0e2f2a;
+      --sage: #dfe9df;
+      --orange: #d9793f;
+      --gold: #c99a4b;
+      --text: #21332e;
+      --muted: #6f7d78;
+      --white: #ffffff;
+      --line: rgba(22, 67, 60, 0.13);
+      --shadow: 0 24px 70px rgba(14, 47, 42, 0.16);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(217, 121, 63, 0.14), transparent 28%),
+        radial-gradient(circle at 92% 14%, rgba(201, 154, 75, 0.16), transparent 28%),
+        linear-gradient(180deg, var(--cream) 0%, #ffffff 42%, #f8fbf6 100%);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .demo-badge {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 80;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 15px;
+      border-radius: 999px;
+      background: rgba(14, 47, 42, 0.92);
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 18px 45px rgba(14, 47, 42, 0.22);
+      backdrop-filter: blur(16px);
+    }
+
+    .demo-badge span {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--orange);
+      box-shadow: 0 0 0 5px rgba(217, 121, 63, 0.2);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      padding: 14px 0;
+      background: rgba(255, 248, 239, 0.72);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(22, 67, 60, 0.07);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 10px 12px 10px 16px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 16px 45px rgba(14, 47, 42, 0.09);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: max-content;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, var(--green), #266b5e);
+      color: white;
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      font-weight: 700;
+      box-shadow: 0 14px 30px rgba(14, 47, 42, 0.2);
+    }
+
+    .brand-name {
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      color: var(--green-2);
+      line-height: 1;
+    }
+
+    .brand-name span {
+      color: var(--orange);
+    }
+
+    .brand-sub {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(223, 233, 223, 0.6);
+      border: 1px solid rgba(22, 67, 60, 0.06);
+    }
+
+    .nav-links a {
+      border: 0;
+      background: transparent;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: rgba(33, 51, 46, 0.72);
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all .22s var(--ease);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: white;
+      color: var(--green);
+      box-shadow: 0 10px 22px rgba(14, 47, 42, 0.08);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease), background .22s var(--ease);
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--green), #276f61);
+      box-shadow: 0 16px 35px rgba(14, 47, 42, 0.22);
+    }
+
+    .btn-secondary {
+      color: var(--green);
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(14, 47, 42, 0.09);
+    }
+
+    .hamburger {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: white;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 19px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--green);
+      transition: all .25s var(--ease);
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 55;
+      background: rgba(255, 248, 239, 0.98);
+      backdrop-filter: blur(22px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .28s var(--ease);
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu a {
+      font-size: clamp(32px, 8vw, 54px);
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      color: var(--green);
+      padding: 8px 0;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+      animation: pageIn .38s var(--ease);
+    }
+
+    @keyframes pageIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .hero {
+      padding: 72px 0 92px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: white;
+      color: var(--orange);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 28px rgba(14, 47, 42, 0.07);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--orange);
+      box-shadow: 0 0 0 5px rgba(217, 121, 63, 0.15);
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      color: var(--green-2);
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: 0.92;
+      letter-spacing: -0.055em;
+      margin-bottom: 26px;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--orange);
+      font-style: italic;
+    }
+
+    .hero-copy {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .trust-row span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .trust-row span::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--green);
+    }
+
+    .hero-showcase {
+      position: relative;
+      border-radius: 38px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image {
+      min-height: 560px;
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(14,47,42,0.12), rgba(14,47,42,0.28)),
+        url("https://images.unsplash.com/photo-1555244162-803834f70033?w=1300&q=90&auto=format&fit=crop") center/cover;
+    }
+
+    .hero-floating {
+      position: absolute;
+      left: -24px;
+      bottom: 42px;
+      width: min(330px, calc(100% - 32px));
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 48px rgba(14, 47, 42, 0.18);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-floating strong {
+      color: var(--green);
+      font-size: 19px;
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .hero-floating p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .page-hero {
+      padding: 70px 0 48px;
+      background:
+        radial-gradient(circle at 88% 0%, rgba(217, 121, 63, 0.14), transparent 28%),
+        linear-gradient(180deg, #fff8ef 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page-hero-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+      align-items: end;
+    }
+
+    .page-hero p {
+      max-width: 500px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 32px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--green-2);
+      font-size: clamp(34px, 4.6vw, 58px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .section-head p {
+      max-width: 470px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .food-card,
+    .event-card,
+    .step-card,
+    .quote-card,
+    .contact-card {
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 45px rgba(14, 47, 42, 0.08);
+      overflow: hidden;
+    }
+
+    .food-img {
+      height: 230px;
+      overflow: hidden;
+      background: var(--sage);
+    }
+
+    .food-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s var(--ease);
+    }
+
+    .food-card:hover .food-img img,
+    .event-card:hover .event-img img {
+      transform: scale(1.045);
+    }
+
+    .food-body {
+      padding: 24px;
+    }
+
+    .pill {
+      display: inline-flex;
+      width: fit-content;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(217, 121, 63, 0.1);
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .food-body h3,
+    .event-body h3,
+    .step-card h3,
+    .quote-card h3,
+    .contact-card h3 {
+      color: var(--green);
+      font-size: 22px;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      margin-bottom: 10px;
+    }
+
+    .food-body p,
+    .event-body p,
+    .step-card p,
+    .quote-card p,
+    .contact-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .event-card.large {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .event-img {
+      min-height: 360px;
+      overflow: hidden;
+      background: var(--sage);
+    }
+
+    .event-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s var(--ease);
+    }
+
+    .event-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .event-stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .mini-event {
+      padding: 26px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, var(--green), #286d5f);
+      color: white;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 20px 50px rgba(14, 47, 42, 0.18);
+    }
+
+    .mini-event:nth-child(2) {
+      background: linear-gradient(145deg, var(--orange), #bd5f2c);
+    }
+
+    .mini-event strong {
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    .mini-event span {
+      color: rgba(255,255,255,0.8);
+      font-size: 14px;
+      margin-top: 12px;
+      display: block;
+    }
+
+    .process {
+      background:
+        radial-gradient(circle at 10% 10%, rgba(22, 67, 60, 0.1), transparent 25%),
+        linear-gradient(180deg, #ffffff 0%, #f3faf4 100%);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step-card {
+      padding: 24px;
+    }
+
+    .step-num {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--sage);
+      color: var(--green);
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .quote-section {
+      padding-top: 40px;
+    }
+
+    .quote-card {
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 34px;
+      align-items: center;
+      background: linear-gradient(145deg, var(--green), #286d5f);
+      color: white;
+    }
+
+    .quote-card h2,
+    .quote-card h3,
+    .quote-card p {
+      color: white;
+    }
+
+    .quote-card p {
+      opacity: .82;
+    }
+
+    .quote-mark {
+      font-family: "Playfair Display", serif;
+      font-size: 92px;
+      line-height: .8;
+      color: rgba(255,255,255,0.18);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .contact-card {
+      padding: 30px;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-list li {
+      display: flex;
+      gap: 12px;
+      color: var(--muted);
+    }
+
+    .contact-list strong {
+      display: block;
+      color: var(--green);
+    }
+
+    .form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form label {
+      display: grid;
+      gap: 7px;
+      color: var(--green);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .form label.full {
+      grid-column: 1 / -1;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(22, 67, 60, 0.16);
+      border-radius: 16px;
+      background: #fffaf3;
+      padding: 14px 15px;
+      color: var(--text);
+      outline: none;
+      transition: all .2s var(--ease);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      background: white;
+      border-color: rgba(217, 121, 63, 0.52);
+      box-shadow: 0 0 0 4px rgba(217, 121, 63, 0.1);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .footer {
+      background: var(--green-2);
+      color: rgba(255,255,255,0.8);
+      padding: 42px 0;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer strong {
+      color: white;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav > .btn {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero-grid,
+      .event-grid,
+      .contact-layout,
+      .quote-card {
+        grid-template-columns: 1fr;
+      }
+
+      .event-card.large {
+        grid-template-columns: 1fr;
+      }
+
+      .card-grid,
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-image {
+        min-height: 420px;
+      }
+
+      .hero-floating {
+        left: 18px;
+        bottom: 18px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .topbar {
+        padding: 10px 0;
+      }
+
+      .nav {
+        border-radius: 22px;
+        padding: 10px;
+      }
+
+      .brand-mark {
+        width: 46px;
+        height: 46px;
+        border-radius: 15px;
+      }
+
+      .brand-name {
+        font-size: 18px;
+      }
+
+      .brand-sub {
+        font-size: 10px;
+      }
+
+      .hero {
+        padding: 44px 0 70px;
+      }
+
+      h1 {
+        font-size: clamp(44px, 13vw, 64px);
+      }
+
+      .page-hero-row,
+      .section-head,
+      .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .card-grid,
+      .steps,
+      .form {
+        grid-template-columns: 1fr;
+      }
+
+      .food-img {
+        height: 210px;
+      }
+
+      .event-img {
+        min-height: 260px;
+      }
+
+      .demo-badge {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo-badge"><span></span>Business-Referenz · Catering</div>
+
+  <header class="topbar">
+    <div class="shell nav">
+      <a href="#" class="brand" onclick="showPage('home'); return false;" aria-label="Elbgenuss Catering Startseite">
+        <div class="brand-mark">E</div>
+        <div>
+          <div class="brand-name">Elbgenuss <span>Catering</span></div>
+          <div class="brand-sub">Frisch. Regional. Besonders.</div>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="#" class="active" data-page="home" onclick="showPage('home'); return false;">Start</a>
+        <a href="#" data-page="catering" onclick="showPage('catering'); return false;">Catering</a>
+        <a href="#" data-page="events" onclick="showPage('events'); return false;">Events</a>
+        <a href="#" data-page="kontakt" onclick="showPage('kontakt'); return false;">Kontakt</a>
+      </nav>
+
+      <a href="#" class="btn btn-primary" onclick="showPage('kontakt'); return false;">Anfrage stellen</a>
+
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" onclick="showPage('home'); toggleMenu(); return false;">Start</a>
+    <a href="#" onclick="showPage('catering'); toggleMenu(); return false;">Catering</a>
+    <a href="#" onclick="showPage('events'); toggleMenu(); return false;">Events</a>
+    <a href="#" onclick="showPage('kontakt'); toggleMenu(); return false;">Kontakt</a>
+  </div>
+
+  <main>
+    <div class="page active" id="page-home">
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div>
+            <div class="eyebrow">Business-Catering an der Elbe</div>
+            <h1>Catering, das Eindruck macht. <span>Ohne steif zu wirken.</span></h1>
+            <p class="hero-copy">
+              Elbgenuss Catering begleitet Firmenveranstaltungen, private Feiern und besondere Anlässe mit frischen Buffets,
+              modernen Fingerfood-Konzepten und persönlichem Service.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#" class="btn btn-primary" onclick="showPage('kontakt'); return false;">Event anfragen</a>
+              <a href="#" class="btn btn-secondary" onclick="showPage('catering'); return false;">Angebot ansehen</a>
+            </div>
+
+            <div class="trust-row">
+              <span>Business-Buffets</span>
+              <span>Private Feiern</span>
+              <span>Regionale Zutaten</span>
+            </div>
+          </div>
+
+          <div class="hero-showcase">
+            <div class="hero-image"></div>
+            <div class="hero-floating">
+              <strong>Für 15 bis 180 Personen</strong>
+              <p>Von Frühstück über Flying Buffet bis Abendveranstaltung – passend geplant, frisch geliefert und sauber umgesetzt.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="shell">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker">Beliebte Angebote</div>
+              <h2>Für jeden Anlass der passende Genuss.</h2>
+            </div>
+            <p>Die Startseite zeigt zentrale Leistungen bereits auf einen Blick – typisch für eine Business-Website mit stärkerer Inhaltsstruktur.</p>
+          </div>
+
+          <div class="card-grid">
+            <article class="food-card">
+              <div class="food-img">
+                <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=900&q=85&auto=format&fit=crop" alt="Frühstücksbuffet mit Brötchen und frischen Zutaten" />
+              </div>
+              <div class="food-body">
+                <span class="pill">Frühstück</span>
+                <h3>Business-Frühstück</h3>
+                <p>Brötchen, Aufstriche, Obst, Kaffee und frische Komponenten für Meetings, Workshops und Teamtage.</p>
+              </div>
+            </article>
+
+            <article class="food-card">
+              <div class="food-img">
+                <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?w=900&q=85&auto=format&fit=crop" alt="Fingerfood und kleine Speisen auf einem Buffet" />
+              </div>
+              <div class="food-body">
+                <span class="pill">Fingerfood</span>
+                <h3>Flying Buffet</h3>
+                <p>Kleine, hochwertige Speisen für Empfänge, Vernissagen, Firmenfeiern und lockere Abendveranstaltungen.</p>
+              </div>
+            </article>
+
+            <article class="food-card">
+              <div class="food-img">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=85&auto=format&fit=crop" alt="Gedeckter Tisch für eine Feier" />
+              </div>
+              <div class="food-body">
+                <span class="pill">Events</span>
+                <h3>Feiern & Anlässe</h3>
+                <p>Individuelle Menüs, Buffetkonzepte und Service für Geburtstage, Jubiläen und besondere Momente.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="process">
+        <div class="shell">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker">Ablauf</div>
+              <h2>Von der Anfrage bis zum gedeckten Buffet.</h2>
+            </div>
+          </div>
+
+          <div class="steps">
+            <article class="step-card">
+              <div class="step-num">1</div>
+              <h3>Anfrage</h3>
+              <p>Personenzahl, Anlass, Ort und grobe Wünsche werden über das Formular übermittelt.</p>
+            </article>
+            <article class="step-card">
+              <div class="step-num">2</div>
+              <h3>Beratung</h3>
+              <p>Gemeinsam wird geklärt, welches Catering-Konzept zum Anlass passt.</p>
+            </article>
+            <article class="step-card">
+              <div class="step-num">3</div>
+              <h3>Angebot</h3>
+              <p>Du erhältst ein transparentes Angebot mit Speisen, Service und Lieferumfang.</p>
+            </article>
+            <article class="step-card">
+              <div class="step-num">4</div>
+              <h3>Umsetzung</h3>
+              <p>Am Veranstaltungstag wird geliefert, aufgebaut und auf Wunsch begleitet.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="page" id="page-catering">
+      <section class="page-hero">
+        <div class="shell page-hero-row">
+          <div>
+            <div class="eyebrow">Catering-Angebot</div>
+            <h1>Buffets, Fingerfood und Genussmomente.</h1>
+          </div>
+          <p>Diese Unterseite zeigt die Leistungen ausführlicher – passend zum Business-Paket mit mehreren Inhaltsbereichen.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="shell">
+          <div class="card-grid">
+            <article class="food-card">
+              <div class="food-img">
+                <img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=900&q=85&auto=format&fit=crop" alt="Frisches Buffet mit Salaten und Speisen" />
+              </div>
+              <div class="food-body">
+                <span class="pill">Klassiker</span>
+                <h3>Buffet-Catering</h3>
+                <p>Vielseitige Buffets mit warmen und kalten Komponenten, abgestimmt auf Gästezahl, Anlass und Budget.</p>
+              </div>
+            </article>
+
+            <article class="food-card">
+              <div class="food-img">
+                <img src="https://images.unsplash.com/photo-1576866209830-589e1bfbaa4d?w=900&q=85&auto=format&fit=crop" alt="Kleine Speisen und Häppchen auf Tellern" />
+              </div>
+              <div class="food-body">
+                <span class="pill">Modern</span>
+                <h3>Fingerfood</h3>
+                <p>Handliche Genussmomente für Empfänge, Netzwerkveranstaltungen und lockere Business-Events.</p>
+              </div>
+            </article>
+
+            <article class="food-card">
+              <div class="food-img">
+                <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=900&q=85&auto=format&fit=crop" alt="Frühstück mit Kaffee und Speisen" />
+              </div>
+              <div class="food-body">
+                <span class="pill">Morgens</span>
+                <h3>Frühstück & Brunch</h3>
+                <p>Frische Brötchen, Obst, Joghurt, Kaffee und kleine Extras für Teamtage, Seminare und private Runden.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="quote-section">
+        <div class="shell">
+          <div class="quote-card">
+            <div class="quote-mark">“</div>
+            <div>
+              <h2>Regional gedacht. Modern serviert.</h2>
+              <p>
+                Elbgenuss Catering steht für unkomplizierte Abstimmung, frische Zutaten und eine Präsentation,
+                die zum Anlass passt – nicht zu steif, nicht zu beliebig.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="page" id="page-events">
+      <section class="page-hero">
+        <div class="shell page-hero-row">
+          <div>
+            <div class="eyebrow">Events & Anlässe</div>
+            <h1>Für Feiern, Firmen und besondere Momente.</h1>
+          </div>
+          <p>Die Event-Unterseite zeigt, wie verschiedene Zielgruppen und Anlässe übersichtlich dargestellt werden können.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="shell">
+          <div class="event-grid">
+            <article class="event-card large">
+              <div class="event-img">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1000&q=85&auto=format&fit=crop" alt="Event mit gedeckten Tischen und Atmosphäre" />
+              </div>
+              <div class="event-body">
+                <span class="pill">Firmenveranstaltungen</span>
+                <h3>Business-Events</h3>
+                <p>
+                  Für Meetings, Sommerfeste, Kundentermine und interne Veranstaltungen:
+                  Elbgenuss sorgt für einen professionellen Rahmen mit entspanntem Charakter.
+                </p>
+              </div>
+            </article>
+
+            <div class="event-stack">
+              <div class="mini-event">
+                <strong>Private Feiern</strong>
+                <span>Geburtstage, Familienfeiern und Jubiläen mit individuellem Buffet.</span>
+              </div>
+              <div class="mini-event">
+                <strong>Empfänge</strong>
+                <span>Fingerfood, kleine Häppchen und Getränke für elegante Anlässe.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="page" id="page-kontakt">
+      <section class="page-hero">
+        <div class="shell page-hero-row">
+          <div>
+            <div class="eyebrow">Kontakt</div>
+            <h1>Jetzt Catering unverbindlich anfragen.</h1>
+          </div>
+          <p>Das Formular ist vorbereitet und kann später mit Formspree oder einem anderen Anbieter verbunden werden.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="shell contact-layout">
+          <aside class="contact-card">
+            <h3>Elbgenuss Catering</h3>
+            <p>Persönliche Abstimmung für Catering, Events und individuelle Genusskonzepte.</p>
+
+            <ul class="contact-list">
+              <li><span>📩</span><div><strong>E-Mail</strong>hallo@elbgenuss-catering.de</div></li>
+              <li><span>📍</span><div><strong>Region</strong>Hamburg, Stade, Altes Land und Umgebung</div></li>
+              <li><span>🕒</span><div><strong>Antwortzeit</strong>In der Regel innerhalb von 24 Stunden</div></li>
+            </ul>
+          </aside>
+
+          <form class="contact-card form">
+            <label>
+              Name
+              <input type="text" placeholder="Max Mustermann" />
+            </label>
+
+            <label>
+              E-Mail
+              <input type="email" placeholder="mail@beispiel.de" />
+            </label>
+
+            <label>
+              Anlass
+              <select>
+                <option>Business-Event</option>
+                <option>Private Feier</option>
+                <option>Frühstück / Brunch</option>
+                <option>Empfang</option>
+                <option>Noch unsicher</option>
+              </select>
+            </label>
+
+            <label>
+              Personenzahl
+              <input type="text" placeholder="z. B. 35 Personen" />
+            </label>
+
+            <label class="full">
+              Nachricht
+              <textarea placeholder="Beschreibe kurz den Anlass, den Ort, die Personenzahl und was du dir vorstellst."></textarea>
+            </label>
+
+            <button class="btn btn-primary" type="button">Anfrage vorbereiten</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-grid">
+      <div>
+        <strong>Elbgenuss Catering</strong>
+        <p>Business-Referenz von Webdesign-Elbe.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#" onclick="showPage('home'); return false;">Start</a>
+        <a href="#" onclick="showPage('catering'); return false;">Catering</a>
+        <a href="#" onclick="showPage('events'); return false;">Events</a>
+        <a href="#" onclick="showPage('kontakt'); return false;">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const pages = document.querySelectorAll(".page");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    function showPage(pageName) {
+      pages.forEach(page => {
+        page.classList.remove("active");
+      });
+
+      const target = document.getElementById("page-" + pageName);
+      if (target) {
+        target.classList.add("active");
+      }
+
+      navLinks.forEach(link => {
+        link.classList.toggle("active", link.dataset.page === pageName);
+      });
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      const hamburger = document.getElementById("hamburger");
+
+      menu.classList.toggle("open");
+      hamburger.classList.toggle("open");
+
+      document.body.style.overflow = menu.classList.contains("open") ? "hidden" : "";
+    }
+  </script>
+</body>
+</html>
